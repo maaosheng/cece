@@ -10,13 +10,15 @@
         {% csrf_token %}
         {% for foo in obj %}
             <p>
+            <p>
             {{ foo.label }}:{{ foo }}
               <span>{{ foo.errors.0 }}</span>
         {% endfor %}
     </p>
 
     <input type="submit" value="提交">
-    <input type="submit" value="删除1">
+    <input type="submit" value="删除">
+    <input type="submit" value="查看">
 
 
 </form>
