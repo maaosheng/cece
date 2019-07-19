@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+<DIV>
+    <a href="/index/">添加数据</a>
+</DIV>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年宁</td>
+            <td>email</td>
+            <td>地址</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for foo in user_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ foo.name }}</td>
+                <td>{{ foo.age }}</td>
+                <td>{{ foo.email }}</td>
+                <td>{{ foo.address }}</td>
+                <td>
+                    <a href="/edit/{{foo.pk }}">编辑</a>|
+                    <a href="/delete/{{foo.pk}}">删除</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+</body>
+</html>
